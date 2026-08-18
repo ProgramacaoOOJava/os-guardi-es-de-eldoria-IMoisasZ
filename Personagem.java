@@ -1,5 +1,6 @@
 // Criando a classe Personagem com atributos e métodos
-public class Personagem {
+// Criando a classe Personagem com atributos e métodos
+public abstract class Personagem {
     String nome;
     String classe;
     int nivel;
@@ -17,8 +18,10 @@ public class Personagem {
     }
 
     // Criado o método exibirStatus para mostrar as informações do personagem
-    public void exibirStatus() {
-        System.out.println("Nome: " + nome + "\nClasse: " + classe + "\nNível: " + nivel + "\nPontos de Vida: "
-                + pontosDeVida + "\nPoder Base: " + poderBase + "\n-------------------------");
+    public String exibirStatus() {
+        return "Nome: " + nome + "\nClasse: " + classe + "\nNível: " + nivel + "\nPontos de Vida: "
+                + pontosDeVida + "\nPoder Base: " + poderBase;
     }
+
+    public abstract void usarHabilidadeEspecial();
 }

@@ -1,37 +1,28 @@
-package nivel_novato.desafio;
+package hora_codar;
 
-// Classe Main para testar a classe Personagem
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        // Istanciando dois objetos da classe Personagem
-        Mago mago = new Mago("Arthemis", "Mago", 10, 100, 50.0, "Fogo");
-        Guerreiro guerreiro = new Guerreiro("Thorin", "Guerreiro", 12, 120, 60.0, "Espada");
+        List<Aluno> alunos = new ArrayList<>();
+        alunos.add(new Aluno("Maria", 8.5));
+        alunos.add(new Aluno("João", 7.0));
+        alunos.add(new Aluno("Ana", 9.2));
+        alunos.add(new Aluno("Pedro", 6.8));
+        alunos.add(new Aluno("Ricardo", 7.5));
 
-        // Exibindo o status dos personagens
-        System.out.println(mago.exibirStatus());
-        System.out.println("\n-------------------------");
-        System.out.println(guerreiro.exibirStatus());
-
-        // Criando um array de personagens e chamando o método usarHabilidadeEspecial
-        // para cada um
-
-        System.out.println("----------- Personagens - Habilidades especiais --------------");
-        Personagem[] personagens = { new Mago("Arthemis", "Mago", 10, 100, 50.0, "Fogo"),
-                new Guerreiro("Thorin", "Guerreiro", 12, 120, 60.0, "Espada") };
-
-        // Iteração sobre o array de personagens e chamando o método
-        // usarHabilidadeEspecial para cada um
-        for (Personagem p : personagens) {
-            p.usarHabilidadeEspecial();
+        System.out.println("Alunos antes da ordenação:");
+        for (Aluno aluno : alunos) {
+            System.out.println(aluno);
         }
 
-        // Ataques prórprios de cada personagem
-        System.out.println("----------- Ataques prórprios de cada personagem --------------");
-        System.out.println(mago.ataqueElemental());
-        System.out.println(
-                "--------------------------------------------------------------------------------------------------------");
-        System.out.println(guerreiro.ataqueFlamejante());
+        Collections.sort(alunos);
 
+        System.out.println("\nAlunos após a ordenação por nota final:");
+        for (Aluno aluno : alunos) {
+            System.out.println(aluno);
+        }
     }
 }
-

@@ -1,6 +1,7 @@
+package desafio;
+
 // Criando a classe Personagem com atributos e métodos
-// Criando a classe Personagem com atributos e métodos
-public abstract class Personagem {
+public abstract class Personagem implements Comparable<Personagem> {
     String nome;
     String classe;
     int nivel;
@@ -14,7 +15,6 @@ public abstract class Personagem {
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
         this.poderBase = poderBase;
-
     }
 
     // Criado o método exibirStatus para mostrar as informações do personagem
@@ -24,4 +24,14 @@ public abstract class Personagem {
     }
 
     public abstract void usarHabilidadeEspecial();
+
+    @Override
+    public String toString() {
+        return nome + " (Nível: " + nivel + ")";
+    }
+
+    @Override
+    public int compareTo(Personagem outroPersonagem) {
+        return Integer.compare(this.nivel, outroPersonagem.nivel);
+    }
 }
